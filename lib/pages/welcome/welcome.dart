@@ -1,7 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_learning_app/main.dart';
 import 'package:flutter_learning_app/pages/welcome/bloc/welcome_bloc.dart';
 import 'package:flutter_learning_app/pages/welcome/bloc/welcome_states.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -122,8 +121,8 @@ class _WelcomeState extends State<Welcome> {
                   duration: const Duration(milliseconds: 500),
                   curve: Curves.decelerate);
             } else {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const MyHomePage()));
+              Navigator.of(context)
+                  .pushNamedAndRemoveUntil("myHomePage", (route) => false);
             }
           },
           child: Container(

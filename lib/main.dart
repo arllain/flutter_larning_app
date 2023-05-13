@@ -28,10 +28,12 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: ScreenUtilInit(
-        builder: (context, child) => const MaterialApp(
-          debugShowCheckedModeBanner: false,
-          home: Welcome(),
-        ),
+        builder: (context, child) => MaterialApp(
+            debugShowCheckedModeBanner: false,
+            home: const Welcome(),
+            routes: {
+              'myHomePage': (context) => const MyHomePage(),
+            }),
       ),
     );
   }
@@ -44,7 +46,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Learning App"),
+          backgroundColor: Colors.white,
         ),
         body: Center(child: BlocBuilder<AppBlocs, AppStates>(
           builder: (context, state) {
