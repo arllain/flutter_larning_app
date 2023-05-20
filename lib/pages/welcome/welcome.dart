@@ -24,7 +24,7 @@ class _WelcomeState extends State<Welcome> {
         body: BlocBuilder<WelcomeBloc, WelcomeState>(
           builder: (context, state) {
             return Container(
-              margin: EdgeInsets.only(top: 34.h),
+              margin: EdgeInsets.only(top: 50.h),
               width: 375.w,
               child: Stack(
                 alignment: Alignment.topCenter,
@@ -60,7 +60,7 @@ class _WelcomeState extends State<Welcome> {
                     ],
                   ),
                   Positioned(
-                    bottom: 30.h,
+                    bottom: 90.h,
                     child: DotsIndicator(
                         position: state.page,
                         dotsCount: 3,
@@ -95,14 +95,12 @@ class _WelcomeState extends State<Welcome> {
             fit: BoxFit.cover,
           ),
         ),
-        Container(
-          child: Text(
-            title,
-            style: TextStyle(
-                color: Colors.black,
-                fontSize: 24.sp,
-                fontWeight: FontWeight.normal),
-          ),
+        Text(
+          title,
+          style: TextStyle(
+              color: Colors.black,
+              fontSize: 24.sp,
+              fontWeight: FontWeight.normal),
         ),
         Container(
           padding: EdgeInsets.only(left: 30.w, right: 30.w),
@@ -122,7 +120,7 @@ class _WelcomeState extends State<Welcome> {
                   curve: Curves.decelerate);
             } else {
               Navigator.of(context)
-                  .pushNamedAndRemoveUntil("myHomePage", (route) => false);
+                  .pushNamedAndRemoveUntil("signIn", (route) => false);
             }
           },
           child: Container(
